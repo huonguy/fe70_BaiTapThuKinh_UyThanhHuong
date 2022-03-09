@@ -25,15 +25,39 @@ export default class BaiTapThuKinh extends Component {
 
   render() {
     let { name, url, desc } = this.state.glassesCurrent;
+
+    let backgroundStyle = {
+      backgroundImage: "url(./glassesImage/background.jpg)",
+      minHeight: "1000px",
+      backgroundSize: "100%",
+    };
+
+    let transparentStyle = {
+      backgroundColor: "rgba(0,0,0,.6)",
+      minHeight: "1000px",
+    };
+
+    let imageStyle = {
+      position: "absolute",
+      top: "25%",
+      opacity: ".6",
+      width: "100%",
+    };
+
+    let contentStyle = {
+      width: "50%",
+      position: "absolute",
+      bottom: "0",
+      transform: "translateX(50%)",
+      textAlign: "left",
+      fontSize: "12px",
+      backgroundImage:
+        "linear-gradient(120deg, #ff9800 0%, rgb(253, 160, 133) 100%)",
+      opacity: ".6",
+    };
     return (
-      <div
-        style={{
-          backgroundImage: "url(./glassesImage/background.jpg)",
-          minHeight: "1000px",
-          backgroundSize: "100%",
-        }}
-      >
-        <div style={{ backgroundColor: "rgba(0,0,0,.6)", minHeight: "1000px" }}>
+      <div style={backgroundStyle}>
+        <div style={transparentStyle}>
           <h5
             style={{ backgroundColor: "rgba(0,0,0,.4)" }}
             className="text-light p-4 text-center"
@@ -46,32 +70,12 @@ export default class BaiTapThuKinh extends Component {
                 <div style={{ position: "relative" }}>
                   <img src={"./glassesImage/model.jpg"} className="w-50" />
 
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "25%",
-                      opacity: ".6",
-                      width: "100%",
-                    }}
-                  >
+                  <div style={imageStyle}>
                     <img src={url} className="w-25" />
                   </div>
-                  <div
-                    className="p-1"
-                    style={{
-                      width: "50%",
-                      position: "absolute",
-                      bottom: "0",
-                      transform: "translateX(50%)",
-                      textAlign: "left",
-                      fontSize: "12px",
-                      backgroundImage:
-                        "linear-gradient(120deg, #ff9800 0%, rgb(253, 160, 133) 100%)",
-                      opacity: ".6",
-                    }}
-                  >
+                  <div className="p-1" style={contentStyle}>
                     <h6 style={{ color: "blue" }}>{name}</h6>
-                    <p style={{ color: "white", fontWeight: "bold" }}>{desc}</p>
+                    <p style={{ color: "white" }}>{desc}</p>
                   </div>
                 </div>
               </div>
